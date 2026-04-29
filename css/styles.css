@@ -27,8 +27,151 @@ h2{text-align:center;margin-bottom:2rem;font-size:2rem}
 .catalogo-section{text-align:center}.catalogo-section .container,.catalogo-section{display:flex;flex-direction:column;align-items:center;justify-content:center}.catalogo-section p{max-width:760px;margin:0 auto 1.4rem auto;font-size:1.1rem;line-height:1.8;color:#333}.contact-links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 footer{text-align:center;padding:2rem;background:#111;color:#fff}
 body{padding-top:0}
-@media(max-width:768px){
- .navbar{position:fixed;top:10px;left:50%;transform:translateX(-50%);flex-direction:column;gap:.8rem;padding:1rem;width:94%}
- .menu{flex-wrap:wrap;justify-content:center}
- .hero-btn{width:100%;max-width:260px;text-align:center}
+
+
+@media (max-width: 768px){
+
+  /* GENERAL */
+  .container{
+    width: 94%;
+  }
+
+  .section{
+    padding: 3.5rem 0;
+  }
+
+  h2{
+    font-size: 1.7rem;
+    margin-bottom: 1.4rem;
+  }
+
+  /* NAVBAR */
+  .navbar{
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 94%;
+    padding: .9rem;
+    border-radius: 16px;
+    gap: .7rem;
+    flex-direction: column;
+  }
+
+  .logo{
+    height: 46px;
+  }
+
+  .menu{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .45rem;
+  }
+
+  .menu a{
+    font-size: .85rem;
+    padding: .45rem .7rem;
+  }
+
+  /* HERO */
+  .hero{
+    min-height: 92vh;
+    background-position: center;
+  }
+
+  .hero-overlay{
+    padding: 1.2rem;
+    padding-top: 125px;
+    padding-bottom: 2rem;
+  }
+
+  .hero-btn{
+    width: 100%;
+    max-width: 240px;
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  /* QUIENES SOMOS */
+  #nosotros p{
+    font-size: 1rem;
+    line-height: 1.75;
+    text-align: center;
+  }
+
+  /* PRODUCTOS */
+  .cards{
+    grid-template-columns: repeat(2,1fr);
+    gap: .8rem;
+  }
+
+  .card{
+    padding: .55rem;
+    border-radius: 14px;
+  }
+
+  .card img{
+    max-width: 140px;
+    height: 140px;
+    margin: .5rem auto;
+  }
+
+  /* CATALOGO */
+  .catalogo-section p{
+    font-size: 1rem;
+    line-height: 1.7;
+    padding: 0 .2rem;
+    max-width: 100%;
+  }
+
+  #catalogBtn{
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* CONTACTO */
+  .contact-links{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-links a{
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+
+  /* FOOTER */
+  footer{
+    padding: 1.5rem 1rem;
+    font-size: .95rem;
+  }
+}
+
+
+/* CELULARES CHICOS */
+@media (max-width: 480px){
+
+  .logo{
+    height: 42px;
+  }
+
+  .menu a{
+    font-size: .78rem;
+    padding: .4rem .6rem;
+  }
+
+  .cards{
+    gap: .6rem;
+  }
+
+  .card img{
+    max-width: 120px;
+    height: 120px;
+  }
+
+  h2{
+    font-size: 1.5rem;
+  }
+
 }
