@@ -1,5 +1,5 @@
 document.getElementById('catalogBtn').addEventListener('click',()=>{
-  window.open('https://wa.me/59800000000?text=Hola%20quiero%20ver%20el%20catalogo','_blank');
+  window.open('https://wa.me/59896018390?text=Hola%20quiero%20ver%20el%20catalogo','_blank');
 });
 
 // scroll suave
