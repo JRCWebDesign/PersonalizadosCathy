@@ -188,3 +188,36 @@ body{padding-top:0}
   }
 
 }
+
+
+
+
+
+/* BANNER */
+#promoBanner{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #d6a23a;
+  color: #111;
+  text-align: center;
+  padding: .7rem;
+  font-weight: bold;
+  z-index: 2000;
+}
+
+#promoBanner a{
+  margin-left: 10px;
+  color: #111;
+  text-decoration: underline;
+}
+
+#closeBanner{
+  position: absolute;
+  right: 15px;
+  cursor: pointer;
+}
+
+.navbar {
+padding-top: 40px;
+}

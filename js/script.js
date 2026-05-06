@@ -9,3 +9,16 @@ for(const link of document.querySelectorAll('a[href^="#"]')){
     document.querySelector(link.getAttribute('href')).scrollIntoView({behavior:'smooth'});
   });
 }
+
+window.addEventListener('load', () => {
+  if (window.instgrm) {
+    window.instgrm.Embeds.process();
+  }
+});
+
+
+//BANNER
+
+document.getElementById('closeBanner').addEventListener('click', () => {
+  document.getElementById('promoBanner').style.display = 'none';
+});
