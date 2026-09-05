@@ -1,0 +1,3 @@
+Assets convertidos a WebP y adaptados a un estilo premium negro + dorado.
+Paleta basada en el CSS proporcionado: #0d0d0d, #151515, #c89b45, #e4c078.
+Las fotos de productos se mantuvieron reconocibles y se reemplazó la presentación anterior por un marco más elegante.
