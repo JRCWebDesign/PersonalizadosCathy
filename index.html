@@ -8,22 +8,43 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <header class="hero" id="inicio">
-    <nav class="navbar container">
-      <img src="assets/logo.png" class="logo" alt="Logo Cathy">
-      <ul class="menu">
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#productos">Productos</a></li>
-        <li><a href="#catalogo">Catálogo</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+  <nav class="navbar" id="navbar">
+    <div class="navbar-container">
+      <a href="#inicio" class="logo-link">
+        <img src="assets/logo.png" class="logo" alt="Logo Cathy">
+      </a>
+      <button class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="menu" id="menu">
+        <li><a href="#inicio" class="menu-link">Inicio</a></li>
+        <li><a href="#nosotros" class="menu-link">Nosotros</a></li>
+        <li><a href="#productos" class="menu-link">Productos</a></li>
+        <li><a href="#contacto" class="menu-link">Contacto</a></li>
       </ul>
-    </nav>
+    </div>
+  </nav>
 
-    <!--<div class="hero-content container">
-      <a href="#productos" class="btn">Ver productos</a>
-    </div>-->
-        <div class="hero-overlay">
-      <a href="#productos" class="btn hero-btn">Ver productos</a>
+  <header class="hero" id="inicio">
+    <div class="hero-background">
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <img src="assets/portada.png" alt="Portada" class="hero-image">
+    </div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">Personaliza tus Momentos</h1>
+        <p class="hero-subtitle">Regalos únicos que dejan recuerdos eternos</p>
+      </div>
+      <a href="#productos" class="btn btn-primary hero-btn">Explorar Productos</a>
+    </div>
+    <div class="scroll-indicator">
+      <span>Despliza para más</span>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M12 5v14M12 19l-7-7M12 19l7-7"/>
+      </svg>
     </div>
   </header>
 
