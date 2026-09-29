@@ -1,142 +1,35 @@
-const catalogBtn = document.getElementById('catalogBtn');
-const menuToggle = document.getElementById('menuToggle');
-const menu = document.getElementById('menu');
-const navbar = document.getElementById('navbar');
-const floatingWhatsapp = document.getElementById('floatingWhatsapp');
+(() => {
+  const input = document.getElementById('mug-input');
+  const phrase = document.getElementById('mug-phrase');
+  const mug = document.querySelector('.mug');
+  const count = document.getElementById('character-count');
+  const link = document.getElementById('idea-link');
+  if (!input || !phrase || !mug || !count || !link) return;
 
-const whatsappCatalog =
-  'https://wa.me/59896018390?text=Hola%20Cathy!%20Quiero%20ver%20el%20cat%C3%A1logo';
-
-catalogBtn?.addEventListener('click', () => {
-  window.open(whatsappCatalog, '_blank', 'noopener,noreferrer');
-});
-
-// Botón flotante de WhatsApp
-floatingWhatsapp?.addEventListener('click', () => {
-  window.open(
-    'https://wa.me/59896018390?text=Hola%20Cathy!%20Quiero%20hacer%20una%20consulta',
-    '_blank',
-    'noopener,noreferrer'
-  );
-});
-
-// Menú móvil
-menuToggle?.addEventListener('click', () => {
-  const isOpen = menu.classList.toggle('active');
-  menuToggle.classList.toggle('active', isOpen);
-  menuToggle.setAttribute('aria-expanded', String(isOpen));
-});
-
-// Cerrar menú al tocar un enlace
-document.querySelectorAll('.menu-link').forEach(link => {
-  link.addEventListener('click', () => {
-    menu?.classList.remove('active');
-    menuToggle?.classList.remove('active');
-    menuToggle?.setAttribute('aria-expanded', 'false');
-  });
-});
-
-// Navbar con efecto al hacer scroll
-function updateNavbar() {
-  navbar?.classList.toggle('scrolled', window.scrollY > 45);
-}
-
-window.addEventListener('scroll', updateNavbar, { passive: true });
-updateNavbar();
-
-// Scroll suave
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-  link.addEventListener('click', event => {
-    const target = document.querySelector(link.getAttribute('href'));
-    if (!target) return;
-
-    event.preventDefault();
-
-    const offset = 85;
-    const y = target.getBoundingClientRect().top + window.scrollY - offset;
-
-    window.scrollTo({
-      top: y,
-      behavior: 'smooth'
-    });
-  });
-});
-
-// Animaciones de entrada
-const revealObserver = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    });
-  },
-  { threshold: 0.12 }
-);
-
-document.querySelectorAll('.reveal').forEach(el => {
-  revealObserver.observe(el);
-});
-
-// Contadores
-const statNumbers = document.querySelectorAll('[data-count]');
-
-const statsObserver = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-
-      const element = entry.target;
-      const target = Number(element.dataset.count);
-      const duration = 1200;
-      const start = performance.now();
-
-      function animate(now) {
-        const progress = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-
-        element.textContent = Math.floor(target * eased);
-
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        }
-      }
-
-      requestAnimationFrame(animate);
-      statsObserver.unobserve(element);
-    });
-  },
-  { threshold: 0.7 }
-);
-
-statNumbers.forEach(el => statsObserver.observe(el));
-
-// Activar la sección actual en el menú
-const sections = document.querySelectorAll('main section[id], header[id]');
-const menuLinks = document.querySelectorAll('.menu-link');
-
-const sectionObserver = new IntersectionObserver(
-  entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-
-      menuLinks.forEach(link => {
-        link.classList.toggle(
-          'active',
-          link.getAttribute('href') === `#${entry.target.id}`
-        );
-      });
-    });
-  },
-  { rootMargin: '-35% 0px -55% 0px' }
-);
-
-sections.forEach(section => sectionObserver.observe(section));
-
-// Procesar el embed de Instagram cuando termina de cargar
-window.addEventListener('load', () => {
-  if (window.instgrm) {
-    window.instgrm.Embeds.process();
+  function updatePreview() {
+    const text = input.value.trim();
+    const color = document.querySelector('input[name="ink"]:checked');
+    phrase.textContent = text || 'Tu frase acá';
+    mug.classList.toggle('long-phrase', text.length > 28);
+    count.textContent = `${input.value.length}/48`;
+    mug.style.setProperty('--print', color.value);
+    mug.setAttribute('aria-label', `Taza ilustrativa con la frase: ${text || 'Tu frase acá'}. Color ${color.dataset.name}.`);
+    const message = text
+      ? `Hola Cathy! Quiero consultar por una taza con la frase: "${text}", en color ${color.dataset.name}. ¿Me contás precio y tiempos?`
+      : 'Hola Cathy! Quiero consultar por una taza personalizada. ¿Me ayudás con una idea?';
+    link.href = `https://wa.me/59896018390?text=${encodeURIComponent(message)}`;
   }
-});
+
+  input.addEventListener('input', updatePreview);
+  document.querySelectorAll('input[name="ink"]').forEach(color => {
+    color.addEventListener('change', updatePreview);
+  });
+  document.querySelectorAll('[data-phrase]').forEach(button => {
+    button.addEventListener('click', () => {
+      input.value = button.dataset.phrase;
+      updatePreview();
+    });
+  });
+  updatePreview();
+  document.getElementById('editor').hidden = false;
+})();
