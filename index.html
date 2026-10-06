@@ -8,13 +8,14 @@
   <title>Personalizados Cathy · ¿Qué diría tu taza?</title>
   <link rel="preload" href="assets/fonts/Fredoka.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
+  <script src="data/productos.js" defer></script>
   <script src="js/script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
   <header class="site-header wrap">
-    <a class="brand" href="#inicio" aria-label="Personalizados Cathy, inicio">Cathy<span>personalizados</span></a>
-    <nav aria-label="Navegación principal"><a href="#productos">Lo que hacemos</a><a href="#probalo">Tu taza</a><a href="https://wa.me/59896018390" target="_blank" rel="noopener noreferrer">Escribinos <span aria-hidden="true">↗</span></a></nav>
+    <a class="brand" href="#inicio" aria-label="Personalizados Cathy, inicio"><img src="assets/logo-cathy.png" alt="Cathy personalizados" width="1080" height="1080"></a>
+    <nav aria-label="Navegación principal"><a href="#productos">Lo que hacemos</a><button class="cart-toggle" type="button" aria-controls="cart-drawer" aria-haspopup="dialog" aria-expanded="false">Mi pedido <span class="cart-count">0</span></button><a href="https://wa.me/59896018390" target="_blank" rel="noopener noreferrer">Escribinos <span aria-hidden="true">↗</span></a></nav>
   </header>
   <main id="contenido">
     <section class="hero wrap" id="inicio" aria-labelledby="hero-title">
@@ -41,23 +42,29 @@
         <noscript><p>Contanos por WhatsApp qué frase te gustaría poner en tu taza.</p></noscript>
       </div>
     </section>
-    <section class="product-rail wrap" aria-label="Más productos de Cathy">
-      <a href="#remeras" class="rail-item"><span>También<br>hacemos remeras <b aria-hidden="true">↗</b></span><img src="assets/remeraairbag.webp" width="900" height="1000" alt="Remera de Airbag" loading="lazy"></a>
-      <a href="#regalos" class="rail-item"><span>Y otros<br>regalos <b aria-hidden="true">↗</b></span><img src="assets/almohadon.webp" width="800" height="800" alt="Almohadón personalizado" loading="lazy"><img src="assets/caramanola.webp" width="800" height="800" alt="Botella personalizada" loading="lazy"></a>
-    </section>
+
     <section class="products wrap section" id="productos" aria-labelledby="products-title">
       <div class="section-heading"><div><p class="eyebrow">Lo que hacemos en Cathy</p><h2 id="products-title">Elegí dónde va tu idea.</h2></div><p>Para regalar, para vos<br>o para tu emprendimiento.</p></div>
-      <div class="product-grid">
-        <a class="product-card" href="https://wa.me/59896018390?text=Hola%20Cathy!%20Quiero%20consultar%20por%20una%20taza%20personalizada" target="_blank" rel="noopener noreferrer"><img src="assets/tazaescorpio.jfif" width="447" height="447" alt="Taza personalizada de Escorpio" loading="lazy" decoding="async"><h3>Tazas <span aria-hidden="true">↗</span></h3><p>Una frase, una foto, un motivo para sonreír.</p></a>
-        <a class="product-card" id="remeras" href="https://wa.me/59896018390?text=Hola%20Cathy!%20Quiero%20consultar%20por%20una%20remera%20personalizada" target="_blank" rel="noopener noreferrer"><img src="assets/remeraairbag.webp" width="900" height="1000" alt="Remera negra de Airbag" loading="lazy" decoding="async"><h3>Remeras <span aria-hidden="true">↗</span></h3><p>Tu banda, tu dibujo o el logo de tu proyecto.</p></a>
-        <a class="product-card" id="regalos" href="https://wa.me/59896018390?text=Hola%20Cathy!%20Quiero%20consultar%20por%20un%20almohadon%20personalizado" target="_blank" rel="noopener noreferrer"><img src="assets/almohadon.webp" width="800" height="800" alt="Almohadón personalizado" loading="lazy" decoding="async"><h3>Almohadones <span aria-hidden="true">↗</span></h3><p>Un recuerdo para tener cerquita.</p></a>
-        <a class="product-card" href="https://wa.me/59896018390?text=Hola%20Cathy!%20Quiero%20consultar%20por%20una%20botella%20personalizada" target="_blank" rel="noopener noreferrer"><img src="assets/caramanola.webp" width="800" height="800" alt="Botella personalizada" loading="lazy" decoding="async"><h3>Botellas y más <span aria-hidden="true">↗</span></h3><p>Ese detalle que te acompaña todos los días.</p></a>
-      </div>
+      <p class="catalog-note">Imágenes ilustrativas. Personalizamos el diseño con vos.</p><div class="product-grid" id="product-grid"></div><noscript><p>Activá JavaScript para armar tu pedido o consultanos por WhatsApp.</p></noscript>
       <div class="catalog-line"><p>¿Tenés otra cosa en mente?</p><a href="https://wa.me/59896018390?text=Hola%20Cathy!%20Quiero%20ver%20el%20catalogo" target="_blank" rel="noopener noreferrer">Pedinos el catálogo completo ↗</a></div>
     </section>
+
     <section class="about wrap section" aria-labelledby="about-title"><div><p class="eyebrow">De Montevideo, con dedicación</p><h2 id="about-title">Lo pensamos<br>con vos.</h2></div><div class="about-copy"><p>Hace más de 15 años que en Cathy transformamos fotos, frases e ideas en productos personalizados.</p><p>Escribinos y contanos qué querés hacer. Te ayudamos a elegir el producto y conversamos sobre el diseño, el precio y los tiempos antes de preparar tu pedido.</p><a class="text-link" href="https://wa.me/59896018390" target="_blank" rel="noopener noreferrer">Contanos tu idea ↗</a></div></section>
     <section class="contact" id="contacto"><div class="wrap"><p class="eyebrow">¿Ya pensaste para quién?</p><h2>Hagamos ese regalo.</h2><a class="button" href="https://wa.me/59896018390" target="_blank" rel="noopener noreferrer">Charlamos por WhatsApp <span aria-hidden="true">↗</span></a></div></section>
   </main>
-  <footer class="wrap"><a class="brand" href="#inicio">Cathy<span>personalizados</span></a><p>Montevideo, Uruguay<br><small>© 2026 Personalizados Cathy</small></p><a href="https://instagram.com/personalizadoscathi" target="_blank" rel="noopener noreferrer">Encontranos en Instagram ↗</a></footer>
+  <footer class="wrap"><a class="brand" href="#inicio"><img src="assets/logo-cathy.png" alt="Cathy personalizados" width="1080" height="1080"></a><p>Montevideo, Uruguay<br><small>© 2026 Personalizados Cathy</small></p><a href="https://instagram.com/personalizadoscathi" target="_blank" rel="noopener noreferrer">Encontranos en Instagram ↗</a></footer>
+  <dialog class="cart-drawer" id="cart-drawer" aria-labelledby="order-title">
+    <div class="drawer-header"><div><p class="eyebrow">Tu selección</p><h2 id="order-title">Mi pedido.</h2></div><button class="drawer-close" type="button" aria-label="Cerrar carrito" autofocus>×</button></div>
+    <div class="drawer-body">
+      <p class="drawer-intro">Confirmamos diseño, precio y tiempos por WhatsApp.</p>
+      <div id="cart-items" aria-live="polite"></div>
+      <button class="continue-shopping" type="button">Seguir eligiendo ↗</button>
+      <label class="input-label" for="order-notes">¿Cómo los querés?</label>
+      <textarea id="order-notes" rows="4" maxlength="1500" placeholder="Nombres, colores, talles… Las fotos y los archivos los enviás por WhatsApp."></textarea>
+    </div>
+    <div class="drawer-footer"><p id="cart-total"></p><a class="button" id="order-link" target="_blank" rel="noopener noreferrer" hidden>Enviar pedido por WhatsApp ↗</a><p class="preview-note">Revisá el mensaje en WhatsApp y envialo para coordinar.</p></div>
+  </dialog>
+  <button class="floating-cart cart-toggle" type="button" aria-controls="cart-drawer" aria-haspopup="dialog" aria-expanded="false">Ver mi pedido <span class="cart-count">0</span></button>
+  <p class="sr-only" id="cart-status" role="status"></p>
 </body>
 </html>
